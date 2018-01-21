@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="video-js.css"/>
+
+<div  id="main">
+<template>
+  <video-player :options="playerOptions"></video-player>
+</template>
+</div>
+<script type="text/javascript" src="video.min.js"></script>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript" src="vue-video-player.js"></script>
+<script type="text/javascript">
+
+  Vue.use(window.VueVideoPlayer);
+  var app = new Vue({
+      el: '#main',
+      data:{
+	     playerOptions: {
+          height: '360',
+          sources: {
+            type: "video/mp4",
+            src: "http://vjs.zencdn.net/v/oceans.mp4"
+          },
+          autoplay: false,
+          controls: true,
+          poster: "https://surmon-china.github.io/vue-quill-editor/static/images/surmon-9.jpg"
+        }
+      
+	  }
+  
+  });
+</script>
